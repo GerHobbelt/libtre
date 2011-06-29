@@ -106,15 +106,16 @@ typedef short tre_cint_t;
 
 #endif /* !TRE_WCHAR */
 
-#if defined(TRE_WCHAR) && defined(HAVE_ISWCTYPE) && defined(HAVE_WCTYPE)
+/* [i_a] MSVC2005 fix for missing 'blank' type et al. */
+#if defined(TRE_WCHAR) && defined(HAVE_ISWCTYPE) && defined(HAVE_WCTYPE) && defined(HAVE_ISASCII) && defined(HAVE_ISBLANK) && defined(HAVE_ISWLOWER) && defined(HAVE_ISWUPPER)
 #define TRE_USE_SYSTEM_WCTYPE 1
 #endif
 
 #ifdef TRE_USE_SYSTEM_WCTYPE
 /* Use system provided iswctype() and wctype(). */
 typedef wctype_t tre_ctype_t;
-#define tre_isctype iswctype
-#define tre_ctype   wctype
+#define tre_isctype(c, type) iswctype(c, type)
+#define tre_ctype(s)   wctype(s)
 #else /* !TRE_USE_SYSTEM_WCTYPE */
 /* Define our own versions of iswctype() and wctype(). */
 typedef int (*tre_ctype_t)(tre_cint_t);

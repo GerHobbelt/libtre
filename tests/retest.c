@@ -1037,12 +1037,12 @@ main(int argc, char **argv)
   test_exec("\n aBCDEFGHIJKLMNOPQRSTUVWXYz", 0, REG_OK, 3, 27, END);
   test_comp("[[:upper:]]+", REG_EXTENDED | REG_ICASE, 0);
   test_exec("\n aBCDEFGHIJKLMNOPQRSTUVWXYz", 0, REG_OK, 2, 28, END);
-#ifdef HAVE_ISWBLANK
-#ifdef HAVE_ISBLANK
+/* #ifdef HAVE_ISWBLANK [i_a] */
+/* #ifdef HAVE_ISBLANK [i_a] */
   test_comp("[[:blank:]]+", REG_EXTENDED, 0);
   test_exec("\na \t b", 0, REG_OK, 2, 5, END);
-#endif /* HAVE_ISBLANK */
-#endif /* HAVE_ISWBLANK */
+/* #endif */ /* HAVE_ISBLANK */
+/* #endif */ /* HAVE_ISWBLANK */
   test_comp("[[:graph:]]+", REG_EXTENDED, 0);
   test_exec("\n %abC12\f", 0, REG_OK, 2, 8, END);
   test_comp("[[:punct:]]+", REG_EXTENDED, 0);

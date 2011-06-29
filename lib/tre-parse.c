@@ -207,12 +207,12 @@ struct {
 } tre_ctype_map[] = {
   { "alnum", &tre_isalnum_func },
   { "alpha", &tre_isalpha_func },
-#ifdef tre_isascii
+/* #ifdef tre_isascii [i_a] */
   { "ascii", &tre_isascii_func },
-#endif /* tre_isascii */
-#ifdef tre_isblank
+/* #endif ** [i_a] ** tre_isascii */
+/* #ifdef tre_isblank [i_a] */
   { "blank", &tre_isblank_func },
-#endif /* tre_isblank */
+/* #endif ** [i_a] ** tre_isblank */
   { "cntrl", &tre_iscntrl_func },
   { "digit", &tre_isdigit_func },
   { "graph", &tre_isgraph_func },
