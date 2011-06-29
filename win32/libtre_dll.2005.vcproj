@@ -23,8 +23,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -35,9 +35,9 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="copy $(TargetFileName) to bin\$(PlatformName)_MSVC2005.$(ConfigurationName) directory"
-				CommandLine="if not exist &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot; mkdir &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot;&#x0D;&#x0A;copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)&quot;&#x0D;&#x0A;"
-				Outputs="$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)"
+				Description=""
+				CommandLine=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -129,8 +129,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -141,9 +141,9 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="copy $(TargetFileName) to bin\$(PlatformName)_MSVC2005.$(ConfigurationName) directory"
-				CommandLine="if not exist &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot; mkdir &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot;&#x0D;&#x0A;copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)&quot;&#x0D;&#x0A;"
-				Outputs="$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)"
+				Description=""
+				CommandLine=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -234,9 +234,9 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Release|Win32"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
+			Name="Debug|Itanium"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -247,9 +247,113 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="copy $(TargetFileName) to bin\$(PlatformName)_MSVC2005.$(ConfigurationName) directory"
-				CommandLine="if not exist &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot; mkdir &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot;&#x0D;&#x0A;copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)&quot;&#x0D;&#x0A;"
-				Outputs="$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)"
+				Description=""
+				CommandLine=""
+				Outputs=""
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="2"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="../win32,../lib,../gnulib/lib"
+				PreprocessorDefinitions="WIN64;_WIN64;WIN32;_DEBUG;_WINDOWS;_USRDLL;TRE_EXPORTS;HAVE_CONFIG_H"
+				StringPooling="true"
+				MinimalRebuild="false"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				EnableFunctionLevelLinking="true"
+				EnableEnhancedInstructionSet="1"
+				BrowseInformation="1"
+				WarningLevel="4"
+				SuppressStartupBanner="true"
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4127"
+				EnablePREfast="true"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1036"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\$(ProjectName).dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="true"
+				ModuleDefinitionFile=".\tre.def"
+				GenerateDebugInformation="true"
+				AssemblyDebug="1"
+				GenerateMapFile="true"
+				MapExports="true"
+				OptimizeReferences="1"
+				EnableCOMDATFolding="2"
+				OptimizeForWindows98="1"
+				LinkTimeCodeGeneration="1"
+				ImportLibrary="$(OutDir)\tre.lib"
+				TargetMachine="5"
+				Profile="true"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description=""
+				CommandLine=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -342,8 +446,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -354,9 +458,9 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="copy $(TargetFileName) to bin\$(PlatformName)_MSVC2005.$(ConfigurationName) directory"
-				CommandLine="if not exist &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot; mkdir &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot;&#x0D;&#x0A;copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)&quot;&#x0D;&#x0A;"
-				Outputs="$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)"
+				Description=""
+				CommandLine=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -448,116 +552,9 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Debug|Itanium"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
-			ConfigurationType="2"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-				Description="copy $(TargetFileName) to bin\$(PlatformName)_MSVC2005.$(ConfigurationName) directory"
-				CommandLine="if not exist &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot; mkdir &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot;&#x0D;&#x0A;copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)&quot;&#x0D;&#x0A;"
-				Outputs="$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="_DEBUG"
-				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
-				TargetEnvironment="2"
-				HeaderFileName=""
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="0"
-				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="../win32,../lib,../gnulib/lib"
-				PreprocessorDefinitions="WIN64;_WIN64;WIN32;_DEBUG;_WINDOWS;_USRDLL;TRE_EXPORTS;HAVE_CONFIG_H"
-				StringPooling="true"
-				MinimalRebuild="false"
-				BasicRuntimeChecks="3"
-				RuntimeLibrary="3"
-				EnableFunctionLevelLinking="true"
-				EnableEnhancedInstructionSet="1"
-				BrowseInformation="1"
-				WarningLevel="4"
-				SuppressStartupBanner="true"
-				Detect64BitPortabilityProblems="true"
-				DebugInformationFormat="3"
-				DisableSpecificWarnings="4127"
-				EnablePREfast="true"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
-				Culture="1036"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\$(ProjectName).dll"
-				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				ModuleDefinitionFile=".\tre.def"
-				GenerateDebugInformation="true"
-				AssemblyDebug="1"
-				GenerateMapFile="true"
-				MapExports="true"
-				OptimizeReferences="1"
-				EnableCOMDATFolding="2"
-				OptimizeForWindows98="1"
-				LinkTimeCodeGeneration="1"
-				ImportLibrary="$(OutDir)\tre.lib"
-				TargetMachine="5"
-				Profile="true"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-				SuppressStartupBanner="true"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="Release|Itanium"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2005.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="2"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -568,9 +565,9 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-				Description="copy $(TargetFileName) to bin\$(PlatformName)_MSVC2005.$(ConfigurationName) directory"
-				CommandLine="if not exist &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot; mkdir &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)&quot;&#x0D;&#x0A;copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)&quot;&#x0D;&#x0A;"
-				Outputs="$(SolutionDir)bin\$(PlatformName)_MSVC2005.$(ConfigurationName)\$(TargetFileName)"
+				Description=""
+				CommandLine=""
+				Outputs=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -654,9 +651,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -763,10 +757,6 @@
 				>
 			</File>
 			<File
-				RelativePath="tre.def"
-				>
-			</File>
-			<File
 				RelativePath="..\lib\xmalloc.h"
 				>
 			</File>
@@ -778,6 +768,14 @@
 					>
 				</File>
 			</Filter>
+		</Filter>
+		<Filter
+			Name="Resources"
+			>
+			<File
+				RelativePath="tre.def"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>

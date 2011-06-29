@@ -32,8 +32,4 @@ tmp-build
 
 autom4te.cache
 
-win32/libtre_dll_Win32_MSVC2008.Debug
-win32/libtre_lib_Win32_MSVC2008.Debug
-win32/retest_Win32_MSVC2008.Debug
-win32/retestw_Win32_MSVC2008.Debug
-
+win32/obj

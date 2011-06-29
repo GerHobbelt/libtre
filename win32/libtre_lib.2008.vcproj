@@ -23,8 +23,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -105,8 +105,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -186,9 +186,91 @@
 			/>
 		</Configuration>
 		<Configuration
+			Name="Debug|Itanium"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="2"
+				HeaderFileName=""
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="../win32,../lib,../gnulib/lib"
+				PreprocessorDefinitions="WIN64;_WIN64;WIN32;_DEBUG;_WINDOWS;HAVE_CONFIG_H"
+				StringPooling="true"
+				MinimalRebuild="false"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				EnableFunctionLevelLinking="true"
+				EnableEnhancedInstructionSet="1"
+				BrowseInformation="1"
+				WarningLevel="4"
+				SuppressStartupBanner="true"
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="3"
+				DisableSpecificWarnings="4127"
+				EnablePREfast="true"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1036"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="$(OutDir)\$(ProjectName).lib"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -271,8 +353,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -354,91 +436,9 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Debug|Itanium"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
-			ConfigurationType="4"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="_DEBUG"
-				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
-				TargetEnvironment="2"
-				HeaderFileName=""
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="0"
-				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="../win32,../lib,../gnulib/lib"
-				PreprocessorDefinitions="WIN64;_WIN64;WIN32;_DEBUG;_WINDOWS;HAVE_CONFIG_H"
-				StringPooling="true"
-				MinimalRebuild="false"
-				BasicRuntimeChecks="3"
-				RuntimeLibrary="3"
-				EnableFunctionLevelLinking="true"
-				EnableEnhancedInstructionSet="1"
-				BrowseInformation="1"
-				WarningLevel="4"
-				SuppressStartupBanner="true"
-				Detect64BitPortabilityProblems="true"
-				DebugInformationFormat="3"
-				DisableSpecificWarnings="4127"
-				EnablePREfast="true"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
-				Culture="1036"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)\$(ProjectName).lib"
-				SuppressStartupBanner="true"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-				SuppressStartupBanner="true"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="Release|Itanium"
-			OutputDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
-			IntermediateDirectory="$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(PlatformName)_MSVC2008.$(ConfigurationName)"
+			IntermediateDirectory="$(SolutionDir)obj\$(ProjectName)_$(PlatformName)_MSVC2008.$(ConfigurationName)"
 			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
