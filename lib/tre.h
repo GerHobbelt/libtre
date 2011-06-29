@@ -11,6 +11,17 @@
 
 #include "tre-config.h"
 
+#if defined(WIN32) || defined(__WIN32)
+
+#if defined(DEBUG) || defined(_DEBUG)
+#ifndef _CRTDBG_MAP_ALLOC
+#define _CRTDBG_MAP_ALLOC 1
+#endif
+#endif
+#include <crtdbg.h>
+
+#endif
+
 #ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
 #endif /* HAVE_SYS_TYPES_H */
