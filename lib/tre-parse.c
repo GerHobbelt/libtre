@@ -457,8 +457,8 @@ tre_parse_bracket(tre_parse_ctx_t *ctx, tre_ast_node_t **result)
       min = l->code_min;
       max = l->code_max;
 
-      DPRINT(("item: %d - %d, class %ld, curr_max = %d\n",
-	      (int)l->code_min, (int)l->code_max, (long)l->u.classt, curr_max));
+      DPRINT(("item: %d - %d, class %p, curr_max = %d\n",
+	      (int)l->code_min, (int)l->code_max, (void *)l->u.classt, curr_max));
 
       if (negate)
 	{
