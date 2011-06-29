@@ -10,6 +10,12 @@ mkdir tmp-build
 cd tmp-build
 
 ../configure
+if ! test -z "$*"; then
+  make clean
+  make
+  make check
+  make distcheck
+fi
 make dist
 
 mkdir stage1-tree
