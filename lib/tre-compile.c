@@ -950,7 +950,7 @@ tre_expand_ast(tre_mem_t mem, tre_stack_t *stack, tre_ast_node_t *ast,
 			  seq2 = copy;
 			if (seq2 == NULL)
 			  return REG_ESPACE;
-			tmp = tre_ast_new_literal(mem, EMPTY, -1, -1);
+			tmp = tre_ast_new_literal(mem, EMPTY, EMPTY, -1);
 			if (tmp == NULL)
 			  return REG_ESPACE;
 			seq2 = tre_ast_new_union(mem, tmp, seq2);
@@ -1057,8 +1057,8 @@ tre_set_empty(tre_mem_t mem)
     return NULL;
 
   new_set[0].position = -1;
-  new_set[0].code_min = -1;
-  new_set[0].code_max = -1;
+  new_set[0].code_min = EMPTY;
+  new_set[0].code_max = EMPTY;
 
   return new_set;
 }
@@ -1080,8 +1080,8 @@ tre_set_one(tre_mem_t mem, int position, int code_min, int code_max,
   new_set[0].neg_classes = neg_classes;
   new_set[0].backref = backref;
   new_set[1].position = -1;
-  new_set[1].code_min = -1;
-  new_set[1].code_max = -1;
+  new_set[1].code_min = EMPTY;
+  new_set[1].code_max = EMPTY;
 
   return new_set;
 }

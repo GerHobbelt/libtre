@@ -128,7 +128,7 @@ tre_expand_ctype(tre_mem_t mem, tre_ctype_t classt, tre_ast_node_t ***items,
   reg_errcode_t status = REG_OK;
   tre_cint_t c;
   tre_cint_t j;
-  int min = -1, max = 0;
+  int min = EMPTY, max = 0;
   assert(TRE_MB_CUR_MAX == 1);
 
   DPRINT(("  expanding class to character ranges\n"));
@@ -148,7 +148,7 @@ tre_expand_ctype(tre_mem_t mem, tre_ctype_t classt, tre_ast_node_t ***items,
 	{
 	  DPRINT(("  range %c (%d) to %c (%d)\n", min, min, max, max));
 	  status = tre_new_item(mem, min, max, i, max_i, items);
-	  min = -1;
+	  min = EMPTY;
 	}
     }
   if (min >= 0 && status == REG_OK)
@@ -830,7 +830,7 @@ tre_parse_bound(tre_parse_ctx_t *ctx, tre_ast_node_t **result)
   /* Create the AST node(s). */
   if (min == 0 && max == 0)
     {
-      *result = tre_ast_new_literal(ctx->mem, EMPTY, -1, -1);
+      *result = tre_ast_new_literal(ctx->mem, EMPTY, EMPTY, -1);
       if (*result == NULL)
 	return REG_ESPACE;
     }
@@ -1351,7 +1351,7 @@ tre_parse(tre_parse_ctx_t *ctx)
 		     subexpression was closed.	POSIX leaves the meaning of
 		     this to be implementation-defined.	 We interpret this as
 		     an empty expression (which matches an empty string).  */
-		  result = tre_ast_new_literal(ctx->mem, EMPTY, -1, -1);
+		  result = tre_ast_new_literal(ctx->mem, EMPTY, EMPTY, -1);
 		  if (result == NULL)
 		    return REG_ESPACE;
 		  if (!(ctx->cflags & REG_EXTENDED))
@@ -1644,7 +1644,7 @@ tre_parse(tre_parse_ctx_t *ctx)
 		{
 		  DPRINT(("tre_parse:	    empty: '%.*" STRF "'\n",
 			  REST(ctx->re)));
-		  result = tre_ast_new_literal(ctx->mem, EMPTY, -1, -1);
+		  result = tre_ast_new_literal(ctx->mem, EMPTY, EMPTY, -1);
 		  if (!result)
 		    return REG_ESPACE;
 		  break;
@@ -1703,7 +1703,7 @@ tre_parse(tre_parse_ctx_t *ctx)
 	    if (result->submatch_id >= 0)
 	      {
 		tre_ast_node_t *n, *tmp_node;
-		n = tre_ast_new_literal(ctx->mem, EMPTY, -1, -1);
+		n = tre_ast_new_literal(ctx->mem, EMPTY, EMPTY, -1);
 		if (n == NULL)
 		  return REG_ESPACE;
 		tmp_node = tre_ast_new_catenation(ctx->mem, n, result);
