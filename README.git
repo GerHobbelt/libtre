@@ -1,12 +1,12 @@
                                                          -*- outline -*-
 * Introduction
 
-This document describes how to build TRE from the darcs repository
+This document describes how to build TRE from the git repository
 sources.  Typical users should use the source code release packages,
 available from the TRE website:
   http://laurikari.net/tre/
 
-Building from darcs is necessary for example if you want to test some
+Building from git is necessary for example if you want to test some
 of the latest changes before they are offically released.
 
 * Prerequisites
@@ -15,7 +15,7 @@ of the latest changes before they are offically released.
 
 You will need the following tools installed on your system:
 
-  - darcs (if you're reading this, you should already have it)
+  - git (if you're reading this, you should already have it)
   - autoconf 2.59 or newer
   - automake 1.9.x (newer is usually better)
   - gettext 0.17 or newer
@@ -24,7 +24,7 @@ You will need the following tools installed on your system:
 
 ** Windows
 
-On Windows building directly from darcs is not supported.  You will
+On Windows building directly from git is not supported.  You will
 need to get a hold of a Unix system and build a source code release
 (see below) and build it on Windows as usual.
 
@@ -46,3 +46,23 @@ Alternatively, you can run
   ./utils/build-sources.sh
 which builds the source code packages and puts them in the `dist'
 subdirectory.  This script needs a working `zip' command.
+
+* Running tests
+
+When these build commands completed successfully:
+
+  ./configure 
+  make 
+  
+you can run the TRE test suite by invoking
+
+  make check
+  
+When you want to make sure everything that's needed is included in 
+the distribution archive(s), you can run 
+
+  make distcheck
+  
+which will verify that the distribution archives can be constructed
+correctly and that, once extracted, these will build a working TRE.  
+
