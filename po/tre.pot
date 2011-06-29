@@ -1,71 +1,73 @@
-# Swedish translation of TRE.
-# This file is distributed under the same license as the TRE package.
-# Daniel Nylander <po@danielnylander.se>, 2006.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Ville Laurikari
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: tre\n"
+"Project-Id-Version: tre 0.8.0\n"
 "Report-Msgid-Bugs-To: tre-general@lists.laurikari.net\n"
 "POT-Creation-Date: 2011-06-29 17:48+0200\n"
-"PO-Revision-Date: 2006-05-23 21:27+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: lib/regerror.c:37
 msgid "No error"
-msgstr "Inga fel"
+msgstr ""
 
 #: lib/regerror.c:38
 msgid "No match"
-msgstr "Ingen träff"
+msgstr ""
 
 #: lib/regerror.c:39
 msgid "Invalid regexp"
-msgstr "Ogiltigt reguljärt uttryck"
+msgstr ""
 
 #: lib/regerror.c:40
 msgid "Unknown collating element"
-msgstr "Okänt kollationeringselement"
+msgstr ""
 
 #: lib/regerror.c:41
 msgid "Unknown character class name"
-msgstr "Okänt teckenklassnamn"
+msgstr ""
 
 #: lib/regerror.c:42
 msgid "Trailing backslash"
-msgstr "Avslutande omvänt snedstreck"
+msgstr ""
 
 #: lib/regerror.c:43
 msgid "Invalid back reference"
-msgstr "Ogiltig bakåtreferens"
+msgstr ""
 
 #: lib/regerror.c:44
 msgid "Missing ']'"
-msgstr "Saknar \"]\""
+msgstr ""
 
 #: lib/regerror.c:45
 msgid "Missing ')'"
-msgstr "Saknar \")\""
+msgstr ""
 
 #: lib/regerror.c:46
 msgid "Missing '}'"
-msgstr "Saknar \"}\""
+msgstr ""
 
 #: lib/regerror.c:47
 msgid "Invalid contents of {}"
-msgstr "Ogiltigt innehåll i {}"
+msgstr ""
 
 #: lib/regerror.c:48
 msgid "Invalid character range"
-msgstr "Ogiltigt teckenomfång"
+msgstr ""
 
 #: lib/regerror.c:49 src/agrep.c:229 src/agrep.c:299 src/agrep.c:324
 #: src/agrep.c:695 src/agrep.c:734
 msgid "Out of memory"
-msgstr "Slut på minne"
+msgstr ""
 
 #: lib/regerror.c:50
 msgid "Invalid use of repetition operators"
@@ -73,17 +75,17 @@ msgstr ""
 
 #: lib/regerror.c:65
 msgid "Unknown error"
-msgstr "Okänt fel"
+msgstr ""
 
 #: src/agrep.c:96 src/agrep.c:103
 #, c-format
 msgid "Usage: %s [OPTION]... PATTERN [FILE]...\n"
-msgstr "Användning: %s [FLAGGA]... MÖNSTER [FIL]...\n"
+msgstr ""
 
 #: src/agrep.c:98
 #, c-format
 msgid "Try `%s --help' for more information.\n"
-msgstr "Prova \"%s --help\" för mer information.\n"
+msgstr ""
 
 #: src/agrep.c:104
 #, c-format
@@ -94,11 +96,6 @@ msgid ""
 "\",\n"
 "\"optmise\", and \"opitmize\" all match.\n"
 msgstr ""
-"Söker efter ungefärliga träffar på MÖNSTER i varje FIL eller standard in.\n"
-"Exempel: \"%s -2 optimera foo.txt\" skriver ut alla rader i filen \"foo.txt"
-"\"\n"
-"som matchar \"optimera\" med maximalt två fel.  T.ex. rader som innehåller\n"
-"\"optimera\", \"optmera\", and \"opitmera\" är alla sökträffar.\n"
 
 #: src/agrep.c:110
 #, c-format
@@ -141,44 +138,6 @@ msgid ""
 "      --show-position       prefix each output record with start and end\n"
 "                            position of the first match within the record\n"
 msgstr ""
-"Val av reguljära uttryck och tolkning:\n"
-"  -e, --regexp=MÖNSTER\t    använd MÖNSTER som ett reguljärt uttryck\n"
-"  -i, --ignore-case\t    ignorera skillnader i skiftläge\n"
-"  -k, --literal\t\t    MÖNSTER är en exakt sträng\n"
-"  -w, --word-regexp\t    tvinga MÖNSTER att endast matcha hela ord\n"
-"\n"
-"Inställningar för ungefärliga sökträffar:\n"
-"  -D, --delete-cost=ANTAL   ställ in kostnad för saknade tecken\n"
-"  -I, --insert-cost=ANTAL   ställ in kostnad för extra tecken\n"
-"  -S, --substitute-cost=ANTAL ställ in kostnad för felaktiga tecken\n"
-"  -E, --max-errors=ANTAL    välj poster som har som mest ANTAL fel\n"
-"  -#\t\t\t    välj poster som har som mest # fel (# är en\n"
-"\t\t\t    siffra mellan 0 och 9)\n"
-"\n"
-"Diverse:\n"
-"  -d, --delimiter=MÖNSTER   ställ in reguljärt uttryck som postavgränsare\n"
-"  -v, --invert-match\t    välj icke-matchande poster\n"
-"  -V, --version\t\t    skriv ut versionsinformation och avsluta\n"
-"  -y, --nothing\t\t    gör ingenting (för kompatibilitet med det icke-fria\n"
-"\t\t\t    programmet agrep)\n"
-"      --help\t\t    visa denna hjälp och avsluta\n"
-"\n"
-"Kontroll av utdata:\n"
-"  -B, --best-match\t    skriv endast ut poster med minst fel\n"
-"  -c, --count\t\t    skriv endast ut ett antal matchande poster per FIL\n"
-"  -h, --no-filename\t    ta bort inledande filnamn vid utskrift\n"
-"  -H, --with-filename\t    skriv ut filnamet för varje träff\n"
-"  -l, --files-with-matches  skriv endast ut FILnamn som innehåller träffar\n"
-"  -M, --delimiter-after     skriv ut postavgränsare efter post om -d "
-"används\n"
-"  -n, --record-number\t    skriv ut postnummer med utdata\n"
-"      --line-number         samma som -n\n"
-"  -q, --quiet, --silent\t    undvik all normal utskrift\n"
-"  -s, --show-cost\t    skriv ut kostnad för matchning med utdata\n"
-"      --colour, --color     använd markörer för att urskilja matchande "
-"strängar\n"
-"      --show-position       skriv ut start- och slutposition för varje\n"
-"\t\t\t    utskriven post för den första träffen inom posten\n"
 
 #: src/agrep.c:149
 #, c-format
@@ -189,10 +148,6 @@ msgid ""
 "no match, and 2 if there were errors.  If -E or -# is not specified, only\n"
 "exact matches are selected.\n"
 msgstr ""
-"Utan FIL eller när FIL är - så läses standard in.  Om mindre än två FIL:er\n"
-"anges så används -h.  Avslutningsstatusen är 0 om träff hittas, 1 om inget\n"
-"hittas och 2 om fel inträffar.  Om varken -E eller -# anges så väljs endast\n"
-"exakta träffar.\n"
 
 #: src/agrep.c:155
 #, c-format
@@ -201,45 +156,43 @@ msgid ""
 "extensions.\n"
 "See tre(7) for a complete description.\n"
 msgstr ""
-"MÖNSTER är ett POSIX-utökat reguljärt uttryck (ERE) med TRE-utökningar.\n"
-"Se tre(7) för en komplett beskrivning.\n"
 
 #: src/agrep.c:159
 #, c-format
 msgid "Report bugs to: "
-msgstr "Rapportera fel till: "
+msgstr ""
 
 #: src/agrep.c:244
 #, c-format
 msgid "Error reading from %s: %s\n"
-msgstr "Fel vid läsning från %s: %s\n"
+msgstr ""
 
 #: src/agrep.c:339
 msgid "Cannot use -B when reading from standard input."
-msgstr "Kan inte använda -B vid inläsning från standard in."
+msgstr ""
 
 #: src/agrep.c:343
 msgid "(standard input)"
-msgstr "(standard in)"
+msgstr ""
 
 #: src/agrep.c:600
 #, c-format
 msgid "Copyright (c) 2001-2009 Ville Laurikari <vl@iki.fi>.\n"
-msgstr "Copyright © 2001-2009 Ville Laurikari <vl@iki.fi>.\n"
+msgstr ""
 
 #: src/agrep.c:622
 #, c-format
 msgid "%s: invalid option --%s\n"
-msgstr "%s: ogiltig flagga --%s\n"
+msgstr ""
 
 #: src/agrep.c:749
 msgid "Error in search pattern"
-msgstr "Fel i sökmönster"
+msgstr ""
 
 #: src/agrep.c:760
 msgid "Error in record delimiter pattern"
-msgstr "Fel i postavgränsande mönster"
+msgstr ""
 
 #: src/agrep.c:767
 msgid "Record delimiter pattern must not match an empty string"
-msgstr "Postavgränsande mönster får inte matcha en tom sträng"
+msgstr ""

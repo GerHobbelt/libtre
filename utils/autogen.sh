@@ -1,4 +1,7 @@
-#! /bin/sh
+#! /bin/sh  
+#
+# Note: you can spcify the '-f' commandline option to force update on autogeneration
+#
 
 set -e
 
@@ -6,25 +9,25 @@ set -e
 rm -rf autom4te.cache
 
 # Generate the ChangeLog file.
-darcs changes --summary > ChangeLog
+#darcs changes --summary > ChangeLog
 
 # Replace variables here and there to get a consistent tree.
 ./utils/replace-vars.sh
 
 # Set up the standard gettext infrastructure.
-autopoint
+autopoint $*
 
 # Set up libtool stuff for use with Automake.
-libtoolize --automake
+libtoolize --automake -c $*
 
 # Update aclocal.m4, using the macros from the m4 directories.
 aclocal -I m4
 
 # Run autoheader to generate config.h.in.
-autoheader
+autoheader $*
 
 # Create Makefile.in's.
-automake --foreign --add-missing
+automake --foreign --add-missing -c $*
 
 # Create the configure script.
-autoconf
+autoconf $*
