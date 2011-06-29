@@ -127,7 +127,8 @@ tre_expand_ctype(tre_mem_t mem, tre_ctype_t classt, tre_ast_node_t ***items,
 {
   reg_errcode_t status = REG_OK;
   tre_cint_t c;
-  int j, min = -1, max = 0;
+  tre_cint_t j;
+  int min = -1, max = 0;
   assert(TRE_MB_CUR_MAX == 1);
 
   DPRINT(("  expanding class to character ranges\n"));
