@@ -2292,7 +2292,15 @@ tre_config(int query, void *result)
     case TRE_CONFIG_VERSION:
       *string_result = TRE_VERSION;
       return REG_OK;
-    }
+
+	case TRE_MB_CUR_MAX_VALUE:  /* [i_a] */
+#if defined(TRE_MB_CUR_MAX)
+		*int_result = TRE_MB_CUR_MAX;
+#else
+		*int_result = 1;
+#endif
+		break;
+  }
 
   return REG_NOMATCH;
 }
