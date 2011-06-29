@@ -25,7 +25,7 @@ rm -rf autom4te*.cache
 autoheader -f
 
 # run automake to create a matching Makefile.in makefile template
-automake -a --gnu
+automake -a -c --gnu
 
 
 
