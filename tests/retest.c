@@ -191,7 +191,7 @@ wrap_regcomp(regex_t *preg, const CHAR_T *data, size_t len, int cflags)
 }
 
 static int
-execute(const CHAR_T *data, int len, size_t pmatch_len, regmatch_t *pmatch,
+execute(const CHAR_T *data, size_t len, size_t pmatch_len, regmatch_t *pmatch,
 	int eflags)
 {
 #ifdef MALLOC_DEBUGGING
@@ -468,7 +468,7 @@ static void
 test_comp(const char *re, int flags, int ret)
 {
   int errcode = 0;
-  int len = strlen(re);
+  size_t len = strlen(re);
 
   if (valid_reobj)
     {

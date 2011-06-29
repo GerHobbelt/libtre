@@ -300,7 +300,7 @@ tre_parse_bracket_items(tre_parse_ctx_t *ctx, int negate,
 	    {
 	      char tmp_str[64];
 	      const tre_char_t *endptr = re + 2;
-	      int len;
+	      size_t len;
 	      DPRINT(("tre_parse_bracket:  class: '%.*" STRF "'\n", REST(re)));
 	      while (endptr < ctx->re_end && *endptr != CHAR_COLON)
 		endptr++;
@@ -310,7 +310,7 @@ tre_parse_bracket_items(tre_parse_ctx_t *ctx, int negate,
 #ifdef TRE_WCHAR
 		  {
 		    tre_char_t tmp_wcs[64];
-		    wcsncpy(tmp_wcs, re + 2, (size_t)len);
+		    wcsncpy(tmp_wcs, re + 2, len);
 		    tmp_wcs[len] = L'\0';
 #if defined HAVE_WCSRTOMBS
 		    {
