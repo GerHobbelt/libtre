@@ -12,8 +12,13 @@
 
 typedef struct {
   int position;
+#if 0 /* [i_a] must be able to carry the full span of all [Unicode] character codes *PLUS* these 'specials': TAG, PARAMETER, BACKREF, ASSERTION and EMPTY */
+  tre_cint_t code_min;
+  tre_cint_t code_max;
+#else
   int code_min;
   int code_max;
+#endif
   int *tags;
   int assertions;
   tre_ctype_t classt;

@@ -2032,7 +2032,7 @@ tre_compile(regex_t *preg, const tre_char_t *regex, size_t n, int cflags)
   if (TRE_MB_CUR_MAX == 1 && !tmp_ast_l->nullable)
     {
       int count = 0;
-      tre_cint_t k;
+      int k; /* [i_a] */
       DPRINT(("Characters that can start a match:"));
       tnfa->firstpos_chars = xcalloc(256, sizeof(char));
       if (tnfa->firstpos_chars == NULL)

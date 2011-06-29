@@ -149,8 +149,13 @@ typedef struct tnfa_transition tre_tnfa_transition_t;
 
 struct tnfa_transition {
   /* Range of accepted characters. */
+#if 0 /* [i_a] must be able to carry the full span of all [Unicode] character codes *PLUS* these 'specials': TAG, PARAMETER, BACKREF, ASSERTION and EMPTY */
   tre_cint_t code_min;
   tre_cint_t code_max;
+#else
+  int code_min;
+  int code_max;
+#endif
   /* Pointer to the destination state. */
   tre_tnfa_transition_t *state;
   /* ID number of the destination state. */
