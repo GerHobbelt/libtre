@@ -16,7 +16,7 @@ typedef struct {
   int code_max;
   int *tags;
   int assertions;
-  tre_ctype_t class;
+  tre_ctype_t classt;
   tre_ctype_t *neg_classes;
   int backref;
   int *params;

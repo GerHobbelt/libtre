@@ -1065,7 +1065,7 @@ tre_set_empty(tre_mem_t mem)
 
 static tre_pos_and_tags_t *
 tre_set_one(tre_mem_t mem, int position, int code_min, int code_max,
-	    tre_ctype_t class, tre_ctype_t *neg_classes, int backref)
+	    tre_ctype_t classt, tre_ctype_t *neg_classes, int backref)
 {
   tre_pos_and_tags_t *new_set;
 
@@ -1076,7 +1076,7 @@ tre_set_one(tre_mem_t mem, int position, int code_min, int code_max,
   new_set[0].position = position;
   new_set[0].code_min = code_min;
   new_set[0].code_max = code_max;
-  new_set[0].class = class;
+  new_set[0].classt = classt;
   new_set[0].neg_classes = neg_classes;
   new_set[0].backref = backref;
   new_set[1].position = -1;
@@ -1108,7 +1108,7 @@ tre_set_union(tre_mem_t mem, tre_pos_and_tags_t *set1, tre_pos_and_tags_t *set2,
       new_set[s1].code_min = set1[s1].code_min;
       new_set[s1].code_max = set1[s1].code_max;
       new_set[s1].assertions = set1[s1].assertions | assertions;
-      new_set[s1].class = set1[s1].class;
+      new_set[s1].classt = set1[s1].classt;
       new_set[s1].neg_classes = set1[s1].neg_classes;
       new_set[s1].backref = set1[s1].backref;
       if (set1[s1].tags == NULL && tags == NULL)
@@ -1153,7 +1153,7 @@ tre_set_union(tre_mem_t mem, tre_pos_and_tags_t *set1, tre_pos_and_tags_t *set2,
       new_set[s1 + s2].code_max = set2[s2].code_max;
       /* XXX - why not | assertions here as well? */
       new_set[s1 + s2].assertions = set2[s2].assertions;
-      new_set[s1 + s2].class = set2[s2].class;
+      new_set[s1 + s2].classt = set2[s2].classt;
       new_set[s1 + s2].neg_classes = set2[s2].neg_classes;
       new_set[s1 + s2].backref = set2[s2].backref;
       if (set2[s2].tags == NULL)
@@ -1378,7 +1378,7 @@ tre_compute_nfl(tre_mem_t mem, tre_stack_t *stack, tre_ast_node_t *tree)
 		    node->lastpos = tre_set_one(mem, lit->position,
 						(int)lit->code_min,
 						(int)lit->code_max,
-						lit->u.class, lit->neg_classes,
+						lit->u.classt, lit->neg_classes,
 						-1);
 		    if (!node->lastpos)
 		      return REG_ESPACE;
@@ -1624,7 +1624,7 @@ tre_make_trans(tre_pos_and_tags_t *p1, tre_pos_and_tags_t *p2,
 	    trans->state = transitions + offs[p2->position];
 	    trans->state_id = p2->position;
 	    trans->assertions = p1->assertions | p2->assertions
-	      | (p1->class ? ASSERT_CHAR_CLASS : 0)
+	      | (p1->classt ? ASSERT_CHAR_CLASS : 0)
 	      | (p1->neg_classes != NULL ? ASSERT_CHAR_CLASS_NEG : 0);
 	    if (p1->backref >= 0)
 	      {
@@ -1634,7 +1634,7 @@ tre_make_trans(tre_pos_and_tags_t *p1, tre_pos_and_tags_t *p2,
 		trans->assertions |= ASSERT_BACKREF;
 	      }
 	    else
-	      trans->u.class = p1->class;
+	      trans->u.classt = p1->classt;
 	    if (p1->neg_classes != NULL)
 	      {
 		for (i = 0; p1->neg_classes[i] != (tre_ctype_t)0; i++);
@@ -1748,8 +1748,8 @@ tre_make_trans(tre_pos_and_tags_t *p1, tre_pos_and_tags_t *p2,
 		DPRINT((", assert %d", trans->assertions));
 	      if (trans->assertions & ASSERT_BACKREF)
 		DPRINT((", backref %d", trans->u.backref));
-	      else if (trans->u.class)
-		DPRINT((", class %ld", (long)trans->u.class));
+	      else if (trans->u.classt)
+		DPRINT((", class %ld", (long)trans->u.classt));
 	      if (trans->neg_classes)
 		DPRINT((", neg_classes %p", trans->neg_classes));
 	      if (trans->params)

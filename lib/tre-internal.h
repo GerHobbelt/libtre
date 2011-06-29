@@ -164,7 +164,7 @@ struct tnfa_transition {
   /* Assertion parameters. */
   union {
     /* Character class assertion. */
-    tre_ctype_t class;
+    tre_ctype_t classt;
     /* Back reference assertion. */
     int backref;
   } u;

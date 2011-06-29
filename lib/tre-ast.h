@@ -59,7 +59,7 @@ typedef struct {
   long code_max;
   int position;
   union {
-    tre_ctype_t class;
+    tre_ctype_t classt; /* [i_a] wrong syntax colouring prevention */
     int *params;
   } u;
   tre_ctype_t *neg_classes;
