@@ -100,6 +100,7 @@ AC_C_INLINE
 dnl Checks for headers, functions, types, and macros
 AC_DEFINE(_GNU_SOURCE, 1, [ Define to enable GNU extensions in glibc ])
 AC_HEADER_STDC
+AC_CHECK_HEADERS([unistd.h])
 
 AC_ARG_WITH(alloca,
   AC_HELP_STRING(
