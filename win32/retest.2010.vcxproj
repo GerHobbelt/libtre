@@ -436,7 +436,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="libtre_dll.2010.vcxproj">
-      <Project>{b1297402-b65a-e666-ffc7-9be1f22c2d99}</Project>
+      <Project>{f2e74ec7-fe72-e9d1-7ed2-0052f4af7865}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -20,6 +20,11 @@ EXTRA_DIST = \
 	win32/tre.2008.sln \
 	win32/retest.2008.vcproj \
 	win32/retestw.2008.vcproj \
+	win32/libtre_lib.2010.vcxproj \
+	win32/libtre_dll.2010.vcxproj \
+	win32/tre.2010.sln \
+	win32/retest.2010.vcxproj \
+	win32/retestw.2010.vcxproj \
 	win32/tre.def \
 	python/tre-python.c \
 	python/setup.py \
